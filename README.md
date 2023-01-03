@@ -6,7 +6,7 @@ We analyze EEG data recorded with 64 electrodes from 109 healthy subjects, under
 
 We analyze both raw and post-processed data considering only the alpha-band frequency which is known to be important for resting states in the brain. 
 
-The raw files are stored in <code>/raw_data</code> directory in <code>.npy</code> files. See https://fileinfo.com/extension/npy for more information. 
+The raw data is in <code>raw_data.zip</code> file as <code>.npy</code> files. See https://fileinfo.com/extension/npy for more information. 
 
 Instructions for running the code:
 
