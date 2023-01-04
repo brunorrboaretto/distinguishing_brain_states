@@ -1,6 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
-import sys
 
 #plt.rcParams['text.usetex'] = True
 #plt.rc('text.latex', preamble=r'\usepackage{siunitx}')
