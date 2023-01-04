@@ -2,13 +2,22 @@
 
 We use ordinal analysis to distinguish between eyes-open (EO) and eyes-closed (EC) resting brain states. 
 
-We analyze EEG data recorded with 64 electrodes from 109 healthy subjects, under two one-minute baseline runs: One with eyes open, and one with eyes closed. The data is freely available at https://physionet.org/content/eegmmidb/1.0.0/. We use spatial ordinal analysis to distinguish between these states, where the permutation entropy is evaluated considering the spatial distribution of electrodes for each time instant. 
+We analyze EEG data recorded with 64 electrodes from 109 healthy subjects, under two one-minute baseline runs: One with eyes open, and one with eyes closed. The data is freely available. We use spatial ordinal analysis to distinguish between these states, where the permutation entropy is evaluated considering the spatial distribution of electrodes for each time instant. 
 
 We analyze both raw and post-processed data considering only the alpha-band frequency which is known to be important for resting states in the brain. 
 
-The raw data is in <code>raw_data.zip</code> file as <code>.npy</code> files. See https://fileinfo.com/extension/npy for more information. 
+Preparing the data:
+
+- The raw data can be downloaded from at https://physionet.org/content/eegmmidb/1.0.0/ as a <code>.zip</code> file which contains the data from 109 subjects. 
+-
+
+<code>.csv</code> files. 
 
 Instructions for running the code:
+
+
+<code>convert_ecg_to_bpy.py</code> converts the data into <code>.npy</code> files. See https://fileinfo.com/extension/npy for more information. 
+
 
 <code>filtering_data.sh</code> creates a new directory <code>/filtered_data</code> and automatically runs <code>filterd_data.py</code> which is a bandpass Butterworth filter which uses the <code> Scipy </code> open library to select the alpha-band frequency (8 - 12 Hz). This process may take a few seconds.
 
