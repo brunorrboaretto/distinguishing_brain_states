@@ -14,7 +14,7 @@ We analyze both raw and post-processed data considering only the alpha-band freq
 
 ## Instructions for running the code:
 
-- <code> spatial_PE.py </code> evaluates the spatial permutation entropy, creating 4 files containing the spatial PE of EO and EC states of each subject (2 files for raw data and two files for filtered data). This process may take a few minutes. 
+- <code> spatial_PE.py </code> evaluates the spatial permutation entropy, creating 4 files containing the spatial PE of EO and EC states of each subject (2 files for raw data and 2 files for filtered data). This process may take a few minutes. 
 - <code> shuffled_spatial_PE.py </code> do the same but shuffle the data. We have discarded subjects 97 and 109 due to several null values at the end of the time series.
 - If everything is alrigth, <code> plot_figures.py </code> creates three figures, which correspond to figures 5,6, and 8 of the manuscript XXXXX.  
 
