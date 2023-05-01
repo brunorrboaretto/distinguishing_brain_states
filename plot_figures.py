@@ -106,6 +106,95 @@ ax_1 = fig.add_subplot(gs[0,-1])
 ax_2 = fig.add_subplot(gs[1,:-1])
 ax_3 = fig.add_subplot(gs[1,-1])
 
+p_data_raw_ec = np.load('perm_spatial_S_raw_ec.npy')
+p_data_raw_eo = np.load('perm_spatial_S_raw_eo.npy')
+p_data_alpha_ec = np.load('perm_spatial_S_alpha_ec.npy')
+p_data_alpha_eo = np.load('perm_spatial_S_alpha_eo.npy')
+
+mean_1 = []
+mean_2 = []
+
+for i in range(len(X)):
+    mean_1.append(np.mean(p_data_raw_ec[:,i]))
+    mean_2.append(np.mean(p_data_raw_eo[:,i]))
+
+mean_1 = np.array(mean_1)
+mean_2 = np.array(mean_2)
+
+ax_0.plot(X,mean_1,color='C0',alpha=0.85,label='EC')#,color='k',capsize=3)
+ax_0.plot(X,mean_2,color='C1',alpha=0.85,label='EO')#,color='r',capsize=3)
+ax_0.set_ylabel(r'$\bar H^t$',fontsize=sz1)
+ax_0.tick_params(axis='both', labelsize=sz2)
+ax_0.set_xlim(0,60)
+ax_0.set_ylim(0.95,.98)
+ax_0.set_yticks((.95,0.98))
+
+ax_1.set_ylabel(r'$\langle \bar H\rangle$',fontsize=sz1)
+ax_1.tick_params(axis='both', labelsize=sz2)
+ax_1.plot(.25,np.mean(mean_1),'C0o')
+ax_1.plot(.75,np.mean(mean_2),'C1s')
+ax_1.errorbar(.25,np.mean(mean_1),yerr=np.std(mean_1),color='C0',capsize=3)
+ax_1.errorbar(.75,np.mean(mean_2),yerr=np.std(mean_2),color='C1',capsize=3)
+ax_1.set_xlim(0,1)
+ax_1.set_ylim(0.95,.98)
+ax_1.set_xticks((.25,.75))
+ax_1.set_xticklabels(['EC','EO'])
+ax_1.set_yticks((.95,0.98))
+
+ax_0.text(61,0.977,'(a)',fontsize=sz1)
+ax_1.text(1.05,0.977,'(b)',fontsize=sz1)
+
+mean_1 = []
+mean_2 = []
+
+for i in range(len(X)):
+    mean_1.append(np.mean(p_data_alpha_ec[:,i]))
+    mean_2.append(np.mean(p_data_alpha_eo[:,i]))
+
+mean_1 = np.array(mean_1)
+mean_2 = np.array(mean_2)
+
+ax_2.plot(X,mean_1,color='C0',alpha=0.85,label='EC')#,color='k',capsize=3)
+ax_2.plot(X,mean_2,color='C1',alpha=0.85,label='EO')#,color='r',capsize=3)
+ax_2.set_ylabel(r'$\bar H^t$',fontsize=sz1)
+ax_2.set_xlabel(r'time (second)',fontsize=sz1)
+ax_2.tick_params(axis='both', labelsize=sz2)
+ax_2.set_xlim(0,60)
+ax_2.set_ylim(0.89,.96)
+ax_2.set_yticks((.89,0.96))
+
+ax_3.set_ylabel(r'$\langle \bar H\rangle$',fontsize=sz1)
+ax_3.tick_params(axis='both', labelsize=sz2)
+ax_3.plot(.25,np.mean(mean_1),'C0o')
+ax_3.plot(.75,np.mean(mean_2),'C1s')
+ax_3.errorbar(.25,np.mean(mean_1),yerr=np.std(mean_1),color='C0',capsize=3)
+ax_3.errorbar(.75,np.mean(mean_2),yerr=np.std(mean_2),color='C1',capsize=3)
+ax_3.set_xlim(0,1)
+ax_3.set_ylim(0.89,.96)
+ax_3.set_xticks((.25,0.75))
+ax_3.set_xticklabels(['EC','EO'])
+ax_3.set_yticks((.89,0.96))
+
+ax_2.text(61,0.95,'(c)',fontsize=sz1)
+ax_3.text(1.05,0.95,'(d)',fontsize=sz1)
+
+ax_2.legend(loc='lower right',fontsize=sz2-5,ncol=2)
+fig.subplots_adjust(hspace=.25,wspace=.85,bottom=-0.4)
+width = 28; height = 14;
+fig.set_size_inches(width/2.54,height/2.54) #2.54 cm = 1 inches
+plt.savefig('perm_spatial_entropy.png', dpi=200,bbox_inches='tight')        
+
+#---------------------------------------------------------------#
+fig = plt.figure()
+print('Generating figure 3')
+
+gs = fig.add_gridspec(2,3)
+ax_0 = fig.add_subplot(gs[0,:-1])
+ax_1 = fig.add_subplot(gs[0,-1])
+
+ax_2 = fig.add_subplot(gs[1,:-1])
+ax_3 = fig.add_subplot(gs[1,-1])
+
 s_data_raw_ec = np.load('shuffled_spatial_S_raw_ec.npy')
 s_data_raw_eo = np.load('shuffled_spatial_S_raw_eo.npy')
 s_data_alpha_ec = np.load('shuffled_spatial_S_alpha_ec.npy')
@@ -187,7 +276,7 @@ plt.savefig('shuffled_spatial_entropy.png', dpi=200,bbox_inches='tight')
 #---------------------------------------------------------------#
 
 fig = plt.figure()
-print('Generating figure 3')
+print('Generating figure 4')
 
 gs = fig.add_gridspec(2,1)
 ax_0 = fig.add_subplot(gs[0,0])

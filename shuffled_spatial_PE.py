@@ -144,5 +144,3 @@ np.save(fp_out_1,raw_ec)
 np.save(fp_out_2,raw_eo)
 np.save(fp_out_3,alpha_ec)
 np.save(fp_out_4,alpha_eo)
-
-
