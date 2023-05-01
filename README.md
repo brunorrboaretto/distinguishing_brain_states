@@ -6,6 +6,8 @@ We analyze EEG data recorded with 64 electrodes from 109 healthy subjects, under
 
 We analyze both raw and post-processed data considering only the alpha-band frequency which is known to be important for resting states in the brain. 
 
+*To ensure proper attribution, It would be greatly appreciated if you could kindly cite our paper <code>DOI:10.1016/j.chaos.2023.113453</code> if you choose to use our code on Github. Thank you for considering our work!* 
+
 ## Preparing the data:
 
 - The raw data can be downloaded from https://physionet.org/content/eegmmidb/1.0.0/ as a <code>.zip</code> file, which contains the data from 109 subjects. 
@@ -17,7 +19,7 @@ We analyze both raw and post-processed data considering only the alpha-band freq
 
 - command <code> python3 spatial_PE.py </code> evaluates the spatial permutation entropy, creating 4 files containing the spatial permutation entropy of EO and EC states of each subject (2 files for raw data and 2 files for filtered data). This process may take a few minutes. 
 - <code> python3 shuffled_spatial_PE.py </code> do the same but shuffle the data. We have discarded subjects 97 and 109 due to several null values at the end of the time series.
-- If everything is alrigth, <code> python3 plot_figures.py </code> creates three figures, which correspond to figures 5,6, and 8 of the manuscript XXXXX.  
+- If everything is alrigth, <code> python3 plot_figures.py </code> creates three figures, which correspond to figures 5,7, and 9 of the manuscript XXXXX.  
 
 ## Python libraries:
 
