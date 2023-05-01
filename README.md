@@ -6,7 +6,8 @@ We analyze EEG data recorded with 64 electrodes from 109 healthy subjects, under
 
 We analyze both raw and post-processed data considering only the alpha-band frequency which is known to be important for resting states in the brain. 
 
-*To ensure proper attribution, It would be greatly appreciated if you could kindly cite our paper <code>DOI:10.1016/j.chaos.2023.113453</code> if you choose to use our code on Github. Thank you for considering our work!* 
+*To ensure proper attribution, It would be greatly appreciated if you could kindly cite our paper <code>DOI:10.1016/j.chaos.2023.113453</code>.
+Thank you for considering our work!* 
 
 ## Preparing the data:
 
